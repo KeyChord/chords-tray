@@ -257,11 +257,11 @@ export default function buildHandler() {
             const pressErr = performPress(el);
             console.log("AXPress:", pressErr);
 
-            if (pressErr === 0) {
+            // if (pressErr === 0) {
               return;
-            }
+            // }
 
-            console.log("AXPress failed, falling back to cursor click");
+            // console.log("AXPress failed, falling back to cursor click");
           } else if (clickType === "left") {
             console.log("AXPress not available, falling back to cursor click");
           } else {

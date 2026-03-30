@@ -249,8 +249,7 @@ function buildHandler() {
 				if (clickType === "left" && hasAction(el, "AXPress")) {
 					const pressErr = performPress(el);
 					console.log("AXPress:", pressErr);
-					if (pressErr === 0) return;
-					console.log("AXPress failed, falling back to cursor click");
+					return;
 				} else if (clickType === "left") console.log("AXPress not available, falling back to cursor click");
 				else console.log("Right click requested, using cursor click");
 				const width = getWidth(el);
