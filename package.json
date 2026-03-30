@@ -9,6 +9,6 @@
   "devDependencies": {
     "@jxa/global-type": "^1.4.0",
     "@keychord/config": "^0.0.2",
-    "@keychord/tsconfig": "^0.0.5"
+    "@keychord/tsconfig": "^0.0.6"
   }
 }
