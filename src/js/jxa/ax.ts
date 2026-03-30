@@ -5,37 +5,37 @@ export function axIsTrusted() {
 export function axErrorName(err: number) {
   switch (err) {
     case 0:
-      return 'kAXErrorSuccess';
+      return "kAXErrorSuccess";
     case -25200:
-      return 'kAXErrorFailure';
+      return "kAXErrorFailure";
     case -25201:
-      return 'kAXErrorIllegalArgument';
+      return "kAXErrorIllegalArgument";
     case -25202:
-      return 'kAXErrorInvalidUIElement';
+      return "kAXErrorInvalidUIElement";
     case -25203:
-      return 'kAXErrorInvalidUIElementObserver';
+      return "kAXErrorInvalidUIElementObserver";
     case -25204:
-      return 'kAXErrorCannotComplete';
+      return "kAXErrorCannotComplete";
     case -25205:
-      return 'kAXErrorAttributeUnsupported';
+      return "kAXErrorAttributeUnsupported";
     case -25206:
-      return 'kAXErrorActionUnsupported';
+      return "kAXErrorActionUnsupported";
     case -25207:
-      return 'kAXErrorNotificationUnsupported';
+      return "kAXErrorNotificationUnsupported";
     case -25208:
-      return 'kAXErrorNotImplemented';
+      return "kAXErrorNotImplemented";
     case -25209:
-      return 'kAXErrorNotificationAlreadyRegistered';
+      return "kAXErrorNotificationAlreadyRegistered";
     case -25210:
-      return 'kAXErrorNotificationNotRegistered';
+      return "kAXErrorNotificationNotRegistered";
     case -25211:
-      return 'kAXErrorAPIDisabled';
+      return "kAXErrorAPIDisabled";
     case -25212:
-      return 'kAXErrorNoValue';
+      return "kAXErrorNoValue";
     case -25213:
-      return 'kAXErrorParameterizedAttributeUnsupported';
+      return "kAXErrorParameterizedAttributeUnsupported";
     case -25214:
-      return 'kAXErrorNotEnoughPrecision';
+      return "kAXErrorNotEnoughPrecision";
     default:
       return `AXError(${err})`;
   }
@@ -59,7 +59,7 @@ export function isObjCRef(value: any) {
   if (!value) return false;
 
   try {
-    return String(value) === '[object Ref]';
+    return String(value) === "[object Ref]";
   } catch {
     return false;
   }
@@ -150,7 +150,7 @@ export function coerceAxValue(value: any): any {
   value = normalizeCfValue(value);
   if (!value) return null;
   if (isAxElement(value)) return value;
-  if (isCfArray(value)) return cfArrayItems(value).map(item => coerceAxValue(item));
+  if (isCfArray(value)) return cfArrayItems(value).map((item) => coerceAxValue(item));
   if (isAxValue(value)) return cfTypeDescription(value);
 
   const stringValue = cfString(value);
@@ -177,7 +177,7 @@ export function axAttrNames(el: any) {
     }
   } catch {}
 
-  return cfArrayItems(out[0]).map(item => cfString(item) ?? String(item));
+  return cfArrayItems(out[0]).map((item) => cfString(item) ?? String(item));
 }
 
 export function axString(el: any, attr: string): string | null {
@@ -211,7 +211,7 @@ export function frontmostAppInfo() {
   if (!app) return null;
 
   return {
-    name: cfString(app.localizedName) ?? 'Unknown',
+    name: cfString(app.localizedName) ?? "Unknown",
     pid: Number(app.processIdentifier),
   };
 }
