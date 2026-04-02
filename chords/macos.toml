@@ -1,6 +1,6 @@
 name = "macOS Tray / System"
 
-[handlers.tray]
+[on.tray]
 file = "tray.js"
 
 [chords]
