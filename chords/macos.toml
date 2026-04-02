@@ -1,10 +1,12 @@
-name = "macOS Tray"
+name = "macOS Tray / System"
 
 [handlers.tray]
 file = "tray.js"
 
 [chords]
-'?=' = { name = "Tray" }
+'?=' = { name = "Tray / System" }
+
+# Tray Items
 # '=0' = { name = "Tray: Notch", 'emit:notch' = [] }
 '=1' = { name = "Tray: 1st Item", 'emit:tray' = [0] }
 '=2' = { name = "Tray: 2nd Item", 'emit:tray' = [1] }
@@ -45,10 +47,24 @@ file = "tray.js"
 '=-8/' = { name = "Tray: 8th End Item Right Click", 'emit:tray' = [-8, 'right'] }
 '=-9/' = { name = "Tray: 9th End Item Right Click", 'emit:tray' = [-9, 'right'] }
 
-'=b' = { name = "Tray: Battery" }
+'=p' = { name = "Tray: Power / Battery" }
 '=c' = { name = "Tray: Control Center" }
 '=t' = { name = "Tray: Time & Date" }
 
 '?=w' = { name = "Tray Wi-Fi" }
 '=w' = { name = "Tray: Wi-Fi" }
 '=wv' = { name = "Tray Wi-Fi: Vary On/Off" }
+
+'=q' = { name = "Force Quit", shortcut = "opt+cmd+esc" }
+'=ls' = { name = "Lock Screen", shortcut = "opt+cmd+esc" }
+'=lo' = { name = "Log Out", shortcut = "ctrl+cmd+q" }
+'=lq' = { name = "Log Quit", shortcut = "opt+shift+cmd+q" }
+
+'?=b' = { name = "Brightness"}
+'=bu' = { name = "Brightness Up", shortcut = "BrightnessUp" }
+'=bd' = { name = "Brightness Down", shortcut = "BrightnessDown" }
+
+'?=v' = { name = "Volume"}
+'=vu' = { name = "Volume Up", shortcut = "AudioVolumeUp" }
+'=vd' = { name = "Volume Down", shortcut = "AudioVolumeDown" }
+'=vm' = { name = "Volume Mute", shortcut = "AudioVolumeMute" }
